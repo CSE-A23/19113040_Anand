@@ -4,6 +4,12 @@
   :: (Scope Resolution Operator)
   .* (Pointer-to-member Operator)
   
+  i) :: can't be overloaded because it is the scope qualifier (or name resolution) operator - it specifies a class and namespace 
+name and it's not available at a class level because it helps to specify whichclass you are referring to.
+ii) "." and "*" can't be overloaded because they specify access, not an operation per se. Dot specifies a member of a class,
+and star is a pointer resolution operator.
+iii) ?: can't be overridden because it isn't really an operator for an if...then...else statement that returns a value.
+  
 2) Compiler Error in line ” Derived *dp = new Base;
 
 3) Multipath Inheritance in C++ is derivation of a class from other derived classes, which are derived from the same base class.
