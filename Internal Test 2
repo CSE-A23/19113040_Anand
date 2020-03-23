@@ -1,14 +1,10 @@
 1) In C++ following operators can not be overloaded,
-  . (Member Access or Dot operator)
-  ?: (Ternary or Conditional Operator)
-  :: (Scope Resolution Operator)
-  .* (Pointer-to-member Operator)
-  
-  i) :: can't be overloaded because it is the scope qualifier (or name resolution) operator - it specifies a class and namespace 
-name and it's not available at a class level because it helps to specify whichclass you are referring to.
-ii) "." and "*" can't be overloaded because they specify access, not an operation per se. Dot specifies a member of a class,
-and star is a pointer resolution operator.
-iii) ?: can't be overridden because it isn't really an operator for an if...then...else statement that returns a value.
+  1. Scope Resolution Operator  (::)    
+  2. Pointer-to-member Operator (.*)    
+  3. Member Access or Dot operator  (.)    
+  4. Ternary or Conditional Operator (?:) 
+  5. Object size Operator   (sizeof) 
+  6. Object type Operator   (typeid)
   
 2) Compiler Error in line ” Derived *dp = new Base;
 
