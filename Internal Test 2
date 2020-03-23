@@ -206,4 +206,61 @@ Program:
       cout << "The quotient of 12.5/0 is"<< result << endl;
     } 
                                                       PART-C
- 11)  
+ 11) Program: 
+#include<iostream>
+using namespace std;
+class salary
+{
+    public:
+    long double bp;
+    void get()
+    {
+        cout<<"Enter basic salary\n";       
+        cin>>bp;
+    }
+    void print()
+    {
+        cout<<"Basic salary="<<bp<<"\n";
+    }
+};
+class isalary:public salary
+{
+    public:
+    long double is;
+    void get()
+    {
+        salary::get();
+        int i;
+        float pec;
+        cout<<"Enter incremented percentage\n";
+        cin>>i;
+        pec=i*0.01;
+        is=bp+pec;
+    }
+    void print()
+    {
+        cout<<"Incremented salary="<<is<<"\n";
+    }
+};
+class rsalary:public isalary
+{
+    public:
+    long double p,r;
+    void get()
+    {
+        isalary::get();
+        cout<<"Enter performance salary\n";         //the performance salary must be higher than the basic salary//
+        cin>>p;
+        r=is+p;
+    }
+    void print()
+    {
+        cout<<"Revised salary="<<r<<"\n";
+    }
+};
+int main()
+{
+    rsalary obj;    //only for single user//
+    obj.get();
+    obj.print();
+}
