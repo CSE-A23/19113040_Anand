@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class book
+{
+    public:
+    char name[50];
+    int sold,bought;
+    void get()
+    {
+        cout<<"Enter name of the book\n";
+        cin>>name;
+        cout<<"Enter number of books was sold\n";
+        cin>>sold;
+        cout<<"Enter number of book was bought\n";
+        cin>>bought;
+    }
+};
+int main()
+{
+    int n,i,count=0,sum=0;
+    book obj[100];
+    cout<<"Enter the number of books\n";
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        obj[i].get();
+        if(obj[i].sold>5)
+        {
+            count++;
+        }
+        if(obj[i].sold>11)
+        {
+            sum++;
+        }
+        try
+        {
+            int sell(obj[i].sold);
+            {
+                if(obj[i].sold>11)
+                    throw 1;
+                if(obj[i].sold<11)
+                    throw 'a';
+            }  
+        }
+        catch(int x)
+        {
+            cout<<"The book "<<obj[i].name<<" was sold more than 11 times\n";
+        }
+        catch(char c)
+        {
+            cout<<"The book "<<obj[i].name<<" was not sold more than 11 times\n";
+        }
+    }
+    cout<<"Books sold more than 5 times = "<<count<<"\n";
+    cout<<"Books sold more than 11 times = "<<sum<<"\n";
+}
