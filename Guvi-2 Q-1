@@ -1,57 +1,56 @@
-#include <iostream>
-#include<stdio.h>
+#include<iostream>
 using namespace std;
 class student
 {
-   public:
-   char name[20];
-   int regno;
-   float chemistry,physics,maths;
-   int sum;
-   void get()
-   {
-     cout<<"Enter name:"<<"\n";
-     cin>>name;
-     cout<<"Enter registration number:"<<"\n";
-     cin>>regno;
-     cout<<"Enter chemistry mark:"<<"\n";
-     cin>>chemistry;
-     cout<<"Enter maths mark:"<<"\n";
-     cin>>maths;
-     cout<<"Enter physics mark:"<<"\n";
-     cin>>physics;
-   }
-   void check()
-   {
-      if((chemistry>0&&physics>0&&maths>0)&&(chemistry<=100&&physics<=100&&maths<=100))
-      {
-           sum=chemistry+maths+physics;
-      }
-    }
- };
- 
-int main()
+    public:
+    char Name[100];
+    int RegNo;
+    int Chemistry;
+    int Maths;
+    int Physics;
+};
+void studin(student &a)
 {
-    int n,i,a,total=0;
-    student obj[100];
-    cout<<"Enter number of Students\n";
-    cin>>n;
-    for(i=0;i<n;i++)
-    {
-        obj[a].get();
-        obj[a].check();
-    }
-    for(i=0;i<n;i++)
-    {
-      if(obj[a].chemistry<0||obj[a].chemistry>100||obj[a].physics<0||obj[a].physics>100||obj[a].maths<0||obj[a].maths>100)
-      {
-         cout<<"Marks of "<<obj[a].name<<" is not in range\n";
-      }
-      total=obj[0].sum;
-      if(total<obj[a].sum)
-      {
-         total=obj[a].sum;
-      }
-    }
-    cout<<obj[a].name<<" has scored more marks "<<total;
+    cin>>a.Name>>a.RegNo>>a.Chemistry>>a.Maths>>a.Physics;
+}
+bool check(student &a)
+{
+    if((a.Chemistry>=0&&a.Chemistry<=100)&&(a.Maths>=0&&a.Maths<=100)&&(a.Physics>=0&&a.Physics<=100))
+    return true;
+    else
+    return false;
+}
+int tota(student &a)
+{
+    int sum=a.Maths+a.Physics+a.Chemistry;
+    return sum;
+}
+void show(student &a)
+{
+    cout<<"\n"<<a.Name<<"\n"<<a.RegNo<<"\n"<<a.Maths<<"\n"<<a.Physics<<"\n"<<a.Chemistry<<"\n";
+}
+main()
+ {
+     int n;
+     cin>>n;
+     student arr[n];
+     int tot=0,max=0,pos=0;
+     for(int i=0;i<n;i++)
+     {
+         studin(arr[i]);
+         if(check(arr[i]))
+          {
+            tot=tota(arr[i]);
+            if(tot>max)
+           { 
+               max=tot;
+               pos=i;
+           }       
+          }
+         else
+         {
+            cout<<"marks of "<<arr[i].Name<<" "<<i<<" is not in range\n";
+         }
+     }
+     cout<<arr[pos].Name<<" has scored highest total "<<max;
 }
