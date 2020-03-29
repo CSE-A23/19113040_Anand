@@ -13,6 +13,12 @@ class MYTIME
            cin>>hrs>>min>>sec;
        }
       void mtout()
+      {
+        if(hrs>=24)
+        {
+            cout<<"Sum = DAY";
+        }
+        else
        {
            cout<<"sum = "<<hrs<<" "<<min<<" "<<sec;
        }
