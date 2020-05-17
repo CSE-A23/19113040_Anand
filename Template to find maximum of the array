@@ -1,0 +1,48 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+template <class T>
+T maximum(T arr[],int n)
+{
+    int i;
+    T max;
+    max=arr[0];
+    for(i=0;i<n;i++)
+    {
+        if(max<arr[i])
+            max=arr[i];
+    }
+    return max;
+}
+
+int main()
+{
+    int a[100],m,n,o,i;
+    float b[100];
+    char c[100];
+    cout<<"Enter size of integer array\n";
+    cin>>n;
+    cout<<"Enter "<<n<<" integers\n";
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    cout<<"Enter size of floating value array\n";
+    cin>>m;
+    cout<<"Enter "<<m<<" floating values\n";
+    for(i=0;i<m;i++)
+    {
+        cin>>b[i];
+    }
+    cout<<"Enter size of character array\n";
+    cin>>o;
+    cout<<"Enter "<<o<<" characters\n";
+    for(i=0;i<o;i++)
+    {
+        cin>>c[i];
+    }
+    cout<<"Integer maximum is : "<<maximum(a,n)<<"\n";
+    cout<<"floating value maximum is : "<<maximum(b,m)<<"\n";
+    cout<<"character maximum is : "<<maximum(c,o)<<"\n";
+}
