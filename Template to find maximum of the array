@@ -19,7 +19,7 @@ T maximum(T arr[],int n)
 int main()
 {
     int a[100],m,n,o,i;
-    float b[100];
+    double b[100];
     char c[100];
     cout<<"Enter size of integer array\n";
     cin>>n;
@@ -28,9 +28,9 @@ int main()
     {
         cin>>a[i];
     }
-    cout<<"Enter size of floating value array\n";
+    cout<<"Enter size of double array\n";
     cin>>m;
-    cout<<"Enter "<<m<<" floating values\n";
+    cout<<"Enter "<<m<<" double values\n";
     for(i=0;i<m;i++)
     {
         cin>>b[i];
@@ -43,6 +43,6 @@ int main()
         cin>>c[i];
     }
     cout<<"Integer maximum is : "<<maximum(a,n)<<"\n";
-    cout<<"floating value maximum is : "<<maximum(b,m)<<"\n";
-    cout<<"character maximum is : "<<maximum(c,o)<<"\n";
+    cout<<"Double maximum is : "<<maximum(b,m)<<"\n";
+    cout<<"Character maximum is : "<<maximum(c,o)<<"\n";
 }
